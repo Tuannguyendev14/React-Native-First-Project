@@ -55,7 +55,7 @@ class signUp extends Component {
     } = this.state;
     this.onRestart();
 
-    const format = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+    const formatEmail = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
 
     if (userName === '') {
       this.setState({errorUserName: 'Nhập tên người dùng!'});
@@ -63,7 +63,7 @@ class signUp extends Component {
     if (email === '') {
       this.setState({errorEmail: 'Nhập email!'});
     }
-    if (format.test(email) === false) {
+    if (formatEmail.test(email) === false) {
       this.setState({errorEmail: 'Email không hợp lệ!'});
     }
     if (phone === '') {
@@ -72,7 +72,10 @@ class signUp extends Component {
     if (isNaN(phone)) {
       this.setState({errorPhone: 'Số điện thoại không hợp lệ!'});
     }
-    if (phone.length > 11) {
+    if (phone.length > 10) {
+      this.setState({errorPhone: 'Số điện thoại không hợp lệ!'});
+    }
+    if (phone.length < 10) {
       this.setState({errorPhone: 'Số điện thoại không hợp lệ!'});
     }
     if (accountName === '') {
