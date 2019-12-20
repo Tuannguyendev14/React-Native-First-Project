@@ -6,6 +6,7 @@ import {
   Platform,
   TouchableHighlight,
   Image,
+  Text,
 } from 'react-native';
 
 import flatListData from './FlatListData';
@@ -39,6 +40,7 @@ class BasicFlatList extends Component {
     return (
       <View style={style.styleView}>
         <View style={style.styleHeaderView}>
+          <Text style={style.styleTextHeader}>List of Food</Text>
           <TouchableHighlight
             style={{marginRight: 10}}
             underlayColor="tomato"
@@ -72,7 +74,7 @@ const style = StyleSheet.create({
     marginTop: Platform.OS === 'ios' ? 34 : 0,
   },
   styleHeaderView: {
-    backgroundColor: '#d1f9f3',
+    backgroundColor: '#E91e63',
     height: 64,
     flexDirection: 'row',
     justifyContent: 'flex-end',
@@ -81,6 +83,12 @@ const style = StyleSheet.create({
   styleIconAdd: {
     width: 35,
     height: 35,
+  },
+  styleTextHeader: {
+    color: 'white',
+    marginRight: 70,
+    fontWeight: 'bold',
+    fontSize: 30,
   },
 });
 

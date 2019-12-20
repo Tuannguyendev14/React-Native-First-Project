@@ -41,7 +41,7 @@ class FlatListItem extends Component {
             );
           },
           text: 'Update',
-          type: 'primary',
+          type: 'warning',
         },
         {
           onPress: () => {
